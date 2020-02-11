@@ -1,11 +1,13 @@
 const args = process.argv.slice(2);
-const timer = function(array) {
-  for (const element of array) {
-    if (element >= 0) {
-      setTimeout(() => {
+
+const timer = function() {
+  for (const el of args) {
+    if (el > 0) { 
+      setTimeout (() => {
         process.stdout.write('\x07');
-      }, 1000 * element);
+      }, 1000 * el)
     }
   }
 };
-timer(args);
+
+timer();
